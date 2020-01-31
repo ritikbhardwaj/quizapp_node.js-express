@@ -2,7 +2,8 @@ const express = require('express');
 const path = require('path');
 const app = express();
 
-var indexRouter = require('./routes/index');
+const indexRouter = require('./routes/index');
+const db = require("./database");
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

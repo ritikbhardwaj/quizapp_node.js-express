@@ -14,59 +14,19 @@
         <h1>Hello <span id="name"><%= username %>!</span> - <%= roll_number%> </h1>
         <div id="line"></div>
         <ul>
+            <% for(let i =0; i < questions.length; i++){ %>  
             <li class="question">
-                <p id="qtext">What is the answer to the given question. This question is a tricky one so please answer carefully.</p>
+                <p id="qtext"><%= questions[i].dataValues.qtext%></p> 
+                <% const arr = questions[i].dataValues.options.split(',') %> 
                 <div class="options">
-                    <div class="option" id="1">OPTION A</div>
-                    <div class="option" id="2">OPTION B</div>
-                    <div class="option" id="3">OPTION C</div>
-                    <div class="option" id="4">OPTION D</div>
+                    <div class="option" id="1"><%= arr[0] %></div>
+                    <div class="option" id="2"><%= arr[1] %></div>
+                    <div class="option" id="3"><%= arr[2] %></div>
+                    <div class="option" id="4"><%= arr[3] %></div>
                 </div>
             </li>
+            <% } %>
 
-            <li class="question">
-                <p id="qtext">What is the answer to the given question. This question is a tricky one so please answer carefully.
-                </p>
-                <div class="options">
-                    <div class="option" id="1">OPTION A</div>
-                    <div class="option" id="2">OPTION B</div>
-                    <div class="option" id="3">OPTION C</div>
-                    <div class="option" id="4">OPTION D</div>
-                </div>
-            </li>
-
-            <li class="question">
-                <p id="qtext">What is the answer to the given question. This question is a tricky one so please answer carefully.
-                </p>
-                <div class="options">
-                    <div class="option" id="1">OPTION A</div>
-                    <div class="option" id="2">OPTION B</div>
-                    <div class="option" id="3">OPTION C</div>
-                    <div class="option" id="4">OPTION D</div>
-                </div>
-            </li>
-
-            <li class="question">
-                <p id="qtext">What is the answer to the given question. This question is a tricky one so please answer carefully.
-                </p>
-                <div class="options">
-                    <div class="option" id="1">OPTION A</div>
-                    <div class="option" id="2">OPTION B</div>
-                    <div class="option" id="3">OPTION C</div>
-                    <div class="option" id="4">OPTION D</div>
-                </div>
-            </li>
-
-            <li class="question">
-                <p id="qtext">What is the answer to the given question. This question is a tricky one so please answer carefully.
-                </p>
-                <div class="options">
-                    <div class="option" id="1">OPTION A</div>
-                    <div class="option" id="2">OPTION B</div>
-                    <div class="option" id="3">OPTION C</div>
-                    <div class="option" id="4">OPTION D</div>
-                </div>
-            </li>
         </ul>
     </div>    
 </body>
