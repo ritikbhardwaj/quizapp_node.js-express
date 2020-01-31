@@ -1,0 +1,109 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+}
+
+/* container styling */
+
+div#container {
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* shadow */
+    -webkit-box-shadow: -1px 0px 28px -12px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -1px 0px 28px -12px rgba(0, 0, 0, 0.75);
+    box-shadow: -1px 0px 28px -12px rgba(0, 0, 0, 0.75);
+}
+
+div#container h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+div#container span#name {
+    color: #c0334d;
+}
+
+div#container div#line {
+    width: 90%;
+    height: 2px;
+    background-color: grey;
+}
+
+/* container > quiz card styling */
+
+ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    margin-top: 10px;
+}
+
+ul li.question {
+    display: flex;
+    background-color: white;
+    width: 90%;
+    height: 250px;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 10px;
+
+    /* box shadow  */
+    
+    -webkit-box-shadow: -1px 0px 28px -12px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -1px 0px 28px -12px rgba(0, 0, 0, 0.75);
+    box-shadow: -1px 0px 28px -12px rgba(0, 0, 0, 0.75);
+}
+
+ul li.question p#qtext {
+    width: 50%;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+    font-size: 25px;
+}
+
+ul li.question div.options {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 50%;
+}
+
+ul li.question div.options .option {
+    width: 95%;
+    height: 60px;
+    background-color: white;
+    margin: 5px;
+    border: 2px solid #c0334d;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+ul li.question div.options .option:hover {
+    background-color: #fcb4c1;
+    transition: all 0.3s;
+}
+
+ul li.question div.options .option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+}
