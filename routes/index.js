@@ -20,7 +20,6 @@ router.get('/quiz',function(req,res){
     attributes: ['qid', 'qtext', 'options']
   }).then((questions) => { 
     obj.questions = questions;
-    console.log(obj.questions[0].dataValues.qtext);
     res.render('quiz', { username: obj.username, roll_number: obj.roll_number, questions: obj.questions });
   });
   

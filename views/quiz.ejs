@@ -15,8 +15,8 @@
         <div id="line"></div>
         <ul>
             <% for(let i =0; i < questions.length; i++){ %>  
-            <li class="question">
-                <p id="qtext"><%= questions[i].dataValues.qtext%></p> 
+            <li class="question" id="<%= questions[i].dataValues.qid%>"</li> 
+                <p id="qtext"><span id="num">(<%= questions[i].dataValues.qid %>)</span> <%= questions[i].dataValues.qtext%></p> 
                 <% const arr = questions[i].dataValues.options.split(',') %> 
                 <div class="options">
                     <div class="option" id="1"><%= arr[0] %></div>
@@ -28,6 +28,9 @@
             <% } %>
 
         </ul>
-    </div>    
+    </div> 
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="javascripts/quiz.js"></script>
 </body>
 </html>

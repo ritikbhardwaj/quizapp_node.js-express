@@ -5,7 +5,7 @@
 
 body {
     display: flex;
-    background-color: #ebf2ea;
+    background-color: #3fc1c9;
     height: 100vh;
     width: 100vw;
     align-items: center;
@@ -17,13 +17,13 @@ body {
 div#form {
     display: flex;
     flex-direction: column;
-    width: 500px;
-    height: 250px;
+    width: 400px;
+    height: 215px;
     align-items: center;
     justify-content: center;
-    background-color: #ebf2ea;
+    background-color: #f5f5f5;
     padding: 10px 30px 30px 30px;
-    border-radius: 30px;
+    border-radius:5px;
     border: 3px white solid;
     /* shadow */
     -webkit-box-shadow: -1px 0px 18px -4px rgba(0, 0, 0, 0.75);
@@ -33,19 +33,20 @@ div#form {
 
 div#form h1 {
     color: black;
-    font-size: 30px;
+    font-size: 20px;
     font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
+    font-weight: 400;
+    align-self: flex-start;
 }
 
 div#form button {
-    background-color: #c0334d;
+    background-color: #3fc1c9;
     width: 415px;
     height: 40px;
     margin-top: 10px;
     border-radius: 7px;
-    font-size: 20px;
-    font-weight: bolder;
+    font-size: 17px;
+    font-weight: 500;
     color: white;
     outline: none;
     cursor: pointer;
@@ -58,7 +59,7 @@ div#form input {
     padding: 5px;
     font-size: 15px;
     outline-width: 2px;
-    outline-color: #c0334d;
+    outline-color: #3fc1c9;
     border-radius: 5px;
     border: none;
 }

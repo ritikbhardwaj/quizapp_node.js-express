@@ -8,22 +8,22 @@ body {
     width: 100vw;
     display: flex;
     justify-content: center;
-    background-color: white;
+    background-color: #3fc1c9;
 }
 
 /* container styling */
 
 div#container {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: #f5f5f5;
     width: 70%;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     /* shadow */
-    -webkit-box-shadow: -1px 0px 28px -12px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: -1px 0px 28px -12px rgba(0, 0, 0, 0.75);
-    box-shadow: -1px 0px 28px -12px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: -1px 0px 11px -2px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -1px 0px 11px -2px rgba(0, 0, 0, 0.75);
+    box-shadow: -1px 0px 11px -2px rgba(0, 0, 0, 0.75);
 }
 
 div#container h1 {
@@ -33,7 +33,7 @@ div#container h1 {
 }
 
 div#container span#name {
-    color: #c0334d;
+    color: #f9ba28;
 }
 
 div#container div#line {
@@ -62,12 +62,10 @@ ul li.question {
     margin: 20px;
     padding: 10px;
     border-radius: 10px;
-
     /* box shadow  */
-    
-    -webkit-box-shadow: -1px 0px 28px -12px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: -1px 0px 28px -12px rgba(0, 0, 0, 0.75);
-    box-shadow: -1px 0px 28px -12px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: -1px 0px 8px -2px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -1px 0px 8px -2px rgba(0, 0, 0, 0.75);
+    box-shadow: -1px 0px 8px -2px rgba(0, 0, 0, 0.75);
 }
 
 ul li.question p#qtext {
@@ -87,15 +85,15 @@ ul li.question div.options {
 ul li.question div.options .option {
     width: 95%;
     height: 60px;
-    background-color: white;
+    /* background-color: white; */
     margin: 5px;
-    border: 2px solid #c0334d;
+    border: 2px solid #f9ba28;
     border-radius: 5px;
     cursor: pointer;
 }
 
 ul li.question div.options .option:hover {
-    background-color: #fcb4c1;
+    background-color: #f7e9c7;
     transition: all 0.3s;
 }
 
@@ -106,4 +104,14 @@ ul li.question div.options .option {
     font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
     font-weight: bold;
+}
+
+span#num {
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+}
+
+.bgselect{
+    background-color: #f7e9c7;
 }
