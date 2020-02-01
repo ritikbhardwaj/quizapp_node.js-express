@@ -25,5 +25,53 @@ router.get('/quiz',function(req,res){
   
 });
 
+router.post('/quiz',function(req,res){
+  let marks = 0;
+  let queryObj = {};
+  let reqarr = [];
+  let actualarr = [];
+  
+   qry = Ques.findAll({
+    attributes: ['qid', 'answer']
+  })
+  .then((questions) => {
+    questions.forEach(element => {
+      queryObj[element.qid] = element.answer;
+    });
+
+    Object.values(queryObj).forEach((value) => {
+      actualarr.push(value);
+    });
+
+    Object.values(req.body).forEach((value) => {
+      reqarr.push(value);
+    });
+    for (let i = 0; i < reqarr.length; i++) {
+      if (reqarr[i] == actualarr[i]) {
+        marks += 1;
+      }
+    }
+  })
+
+  setTimeout(function(){
+    console.log(queryObj);
+    res.json({
+      marks: marks,
+      arr1: reqarr,
+      arr2: actualarr,
+      roll_number: req.body.roll_number,
+      pof: pof(marks, 30)
+    })
+  },1000);
+
+  function pof(marks, criteria){
+    if((marks/reqarr.length)*100 > criteria){
+      return 1;
+    }else{
+      return 0;
+    }
+  }
+});
+
 
 module.exports = router;

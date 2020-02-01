@@ -12,8 +12,11 @@ const sequelize = new Sequelize({
 
 const Ques = questionModel(sequelize,Sequelize);
 //sync the database with the model
-sequelize.sync().then(() => {console.log("Database and table created!")});
+function init(){
+    sequelize.sync().then(() => { console.log("Database and table created!") });
+}
 //exposing the connection to other files
 module.exports = {
-    Ques
+    Ques,
+    init
 }

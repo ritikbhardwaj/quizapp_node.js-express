@@ -11,6 +11,20 @@ body {
     background-color: #3fc1c9;
 }
 
+body button {
+    height: 40px;
+    width: 150px;
+    background-color: white;
+    border-radius: 5px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+}
+
 /* container styling */
 
 div#container {
@@ -54,7 +68,7 @@ ul {
     margin-top: 10px;
 }
 
-ul li.question {
+ul li {
     display: flex;
     background-color: white;
     width: 90%;
@@ -68,21 +82,21 @@ ul li.question {
     box-shadow: -1px 0px 8px -2px rgba(0, 0, 0, 0.75);
 }
 
-ul li.question p#qtext {
+ul li p#qtext {
     width: 50%;
     font-family: 'Montserrat', sans-serif;
     font-weight: 100;
     font-size: 25px;
 }
 
-ul li.question div.options {
+ul li div.options {
     display: flex;
     align-items: flex-start;
     flex-direction: column;
     width: 50%;
 }
 
-ul li.question div.options .option {
+ul li div.options div {
     width: 95%;
     height: 60px;
     /* background-color: white; */
@@ -92,12 +106,12 @@ ul li.question div.options .option {
     cursor: pointer;
 }
 
-ul li.question div.options .option:hover {
+ul li div.options div:hover {
     background-color: #f7e9c7;
     transition: all 0.3s;
 }
 
-ul li.question div.options .option {
+ul li div.options div {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -112,6 +126,6 @@ span#num {
     font-size: 30px;
 }
 
-.bgselect{
+.bgselect {
     background-color: #f7e9c7;
 }
