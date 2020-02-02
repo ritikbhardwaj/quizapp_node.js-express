@@ -1,6 +1,8 @@
-let obj ={};
-
 $('document').ready(()=>{
+    let obj = {
+        name: $("span#name").html(),
+        roll_number: $("span#rollnumber").html()
+    };
 
     $('li.question').each(function(){
         // console.dir(this);
@@ -8,7 +10,7 @@ $('document').ready(()=>{
             $(this).click(function(e){;
                 $(e.currentTarget).toggleClass("bgselect");
                 obj[e.currentTarget.parentNode.parentNode.id] = e.currentTarget.id;
-                console.log(obj);
+                //console.log(obj);
             });
         });
     });
@@ -18,7 +20,6 @@ $('document').ready(()=>{
     });
 
     $("button#submit").click(function () {
-        console.log(obj);
         $.ajax({
             url: "http://localhost:3000/quiz",
             beforeSend: function () {
@@ -31,6 +32,16 @@ $('document').ready(()=>{
             method: "POST"
         }).done((res) => {
             console.log(res);
+            $('div#container').html(`
+                <div id="result">
+                    <h3>Result</h3>
+                        <p id="name">${res.name}</p>
+                        <p id="rollnumber">${res.roll_number}</p>
+                        <h1><span id="marks">${res.marks}</span>/4 - <span id="pof" style="color: ${res.pof ? "green" : "red"}">${res.pof ? "PASS!" : "FAIL!"}</spanspan></h1>
+                </div>
+                <img src="images/award.png" alt="award">              
+            `);
+            $('button#submit').prop("disabled","true");
         });
     });
 });

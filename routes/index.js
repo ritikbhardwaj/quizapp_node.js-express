@@ -20,7 +20,7 @@ router.get('/quiz',function(req,res){
     attributes: ['qid', 'qtext', 'options']
   }).then((questions) => { 
     obj.questions = questions;
-    res.render('quiz', { username: obj.username, roll_number: obj.roll_number, questions: obj.questions });
+    res.render('quiz', { username: obj.username, roll_number: obj.roll_number, questions});
   });
   
 });
@@ -54,14 +54,16 @@ router.post('/quiz',function(req,res){
   })
 
   setTimeout(function(){
-    console.log(queryObj);
-    res.json({
+    let obj = {
+      name: req.body.name,
+      roll_number: parseInt(req.body.roll_number),
       marks: marks,
       arr1: reqarr,
       arr2: actualarr,
       roll_number: req.body.roll_number,
       pof: pof(marks, 30)
-    })
+    }
+    res.json(obj);
   },1000);
 
   function pof(marks, criteria){
@@ -71,6 +73,7 @@ router.post('/quiz',function(req,res){
       return 0;
     }
   }
+
 });
 
 

@@ -129,3 +129,69 @@ span#num {
 .bgselect {
     background-color: #f7e9c7;
 }
+
+/* result  */
+
+div#result {
+    background-color: white;
+    width: 90%;
+    height: 260px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 200px;
+    padding-left: 20px;
+    padding-top: 10px;
+    border-radius: 5px;
+    /* border: 2px soli; */
+    /* box-shadow */
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+div#result>p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+div#result>p#name {
+    font-family: 'Prata', serif;
+    font-size: 20px;
+}
+
+div#result>p#rollnumber {
+    font-weight: 500;
+    font-size: 18px;
+    margin-top: 0px;
+}
+
+div#result>h1 {
+    font-size: 30px;
+}
+
+div#result span#pof {
+    color: green;
+}
+
+div#result>h1 span#marks {
+    font-size: 60px;
+    color: #d21f3c;
+}
+
+div#result>h3 {
+    font-family: 'Prata', serif;
+    font-size: 50px;
+    /* text-decoration: underline; */
+}
+
+div#container img {
+    height: 400px;
+    transform: rotate(20deg);
+    opacity: 30%;
+    position: relative;
+    margin-top: -100px;
+    margin-left: 400px;
+}
