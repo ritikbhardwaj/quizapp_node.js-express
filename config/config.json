@@ -1,7 +1,7 @@
 {
     "username":"root",
-    "password":"Bhanuvilla2000",
+    "password":"your password",
     "dialect":"mysql",
-    "database":"web",
+    "database":"your database name",
     "host":"127.0.0.1"
 }
