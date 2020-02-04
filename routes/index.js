@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const {Ques} = require("../database");
+const {Ques,Result} = require("../database");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -26,12 +26,13 @@ router.get('/quiz',function(req,res){
 });
 
 router.post('/quiz',function(req,res){
+  console.log(req.body);
   let marks = 0;
   let queryObj = {};
   let reqarr = [];
   let actualarr = [];
   
-   qry = Ques.findAll({
+  Ques.findAll({
     attributes: ['qid', 'answer']
   })
   .then((questions) => {
@@ -44,14 +45,18 @@ router.post('/quiz',function(req,res){
     });
 
     Object.values(req.body).forEach((value) => {
-      reqarr.push(value);
+      if(typeof value === "number"){
+        reqarr.push(value);
+      }
     });
     for (let i = 0; i < reqarr.length; i++) {
       if (reqarr[i] == actualarr[i]) {
         marks += 1;
       }
     }
-  })
+  });
+
+
 
   setTimeout(function(){
     let obj = {
@@ -63,6 +68,14 @@ router.post('/quiz',function(req,res){
       roll_number: req.body.roll_number,
       pof: pof(marks, 30)
     }
+    Result.create({
+      rollnumber: obj.roll_number,
+      marks: obj.marks,
+      pof: obj.pof
+    }).then((newUser)=>{
+      console.log(`Entered data for ${newUser.rollnumber}`);
+    }).catch(err=>console.log(err));
+
     res.json(obj);
   },1000);
 

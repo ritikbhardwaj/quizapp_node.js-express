@@ -1,3 +1,7 @@
+/*
+This table contains the questions for the quiz
+*/
+
 module.exports = (sequelize,DataTypes)=>{
     return sequelize.define('question', {
         qid: {
@@ -17,6 +21,8 @@ module.exports = (sequelize,DataTypes)=>{
             type: DataTypes.INTEGER,
             allowNull: false,
         }
+    },{
+        timestamps: false
     });
 }
 

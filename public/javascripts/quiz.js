@@ -37,7 +37,7 @@ $('document').ready(()=>{
                     <h3>Result</h3>
                         <p id="name">${res.name}</p>
                         <p id="rollnumber">${res.roll_number}</p>
-                        <h1><span id="marks">${res.marks}</span>/4 - <span id="pof" style="color: ${res.pof ? "green" : "red"}">${res.pof ? "PASS!" : "FAIL!"}</spanspan></h1>
+                        <h1><span id="marks">${res.marks}</span>/${res.arr2.length} - <span id="pof" style="color: ${res.pof ? "green" : "red"}">${res.pof ? "PASS!" : "FAIL!"}</spanspan></h1>
                 </div>
                 <img src="images/award.png" alt="award">              
             `);
