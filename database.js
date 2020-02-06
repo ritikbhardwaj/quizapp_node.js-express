@@ -1,22 +1,26 @@
-const { username, password, dialect, database, host } = require("./config/config.json");
+const config = require("./config/config.json");
 const Sequelize = require("sequelize");
 const questionModel = require("./models/questions");
+const resultModel = require("./models/result");
 
 const sequelize = new Sequelize({
-    username,
-    password,
-    host,
-    dialect,
-    database
+    username: config.username,
+    password: config.password,
+    host: config.host,
+    dialect: config.dialect,
+    database: config.database
 });
 
-const Ques = questionModel(sequelize,Sequelize);
-//sync the database with the model
-function init(){
-    sequelize.sync().then(() => { console.log("Database and table created!") });
-}
+// Connect all the models/tables in the database to a db object,
+//so everything is accessible via one object
+const db ={}; 
+
+db.sequelize = sequelize;
+db.Sequelize = Sequelize;
+
+//Models/tables
+db.Ques = require("./models/questions")(sequelize,Sequelize);
+db.Result = require("./models/result")(sequelize, Sequelize);
+
 //exposing the connection to other files
-module.exports = {
-    Ques,
-    init
-}
+module.exports = db;

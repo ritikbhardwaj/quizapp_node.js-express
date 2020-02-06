@@ -39,7 +39,7 @@ div#form h1 {
     align-self: flex-start;
 }
 
-div#form button {
+button {
     background-color: #3fc1c9;
     width: 415px;
     height: 40px;
@@ -50,6 +50,10 @@ div#form button {
     color: white;
     outline: none;
     cursor: pointer;
+}
+
+button#result{
+    background-color: rgb(100, 250, 100);
 }
 
 div#form input {
