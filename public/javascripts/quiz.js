@@ -34,25 +34,6 @@ $('document').ready(()=>{
     })(0.2)
 
     function makePost() {
-    var obj = {
-        name: $('span#name').html(),
-        roll_number: $('span#rollnumber').html(),
-        answers:{}
-    }
-    $('li.question').each(function(){
-        // console.dir(this)
-        $(this.lastElementChild.children).each(function(){
-            $(this).click(function(e){
-                $(e.currentTarget).toggleClass('bgselect')
-                obj.answers[e.currentTarget.parentNode.parentNode.id] = e.currentTarget.id
-            })
-        })
-    })
-    $('button#back').click(function(){
-        window.location.replace('http://localhost:3000')
-    })
-    $('button#submit').click(function () {
-        console.log("SENT OBJECT - ",obj) //debugging
         $.ajax({
             url: 'http://localhost:3000/quiz',
             beforeSend: function () {
@@ -68,11 +49,7 @@ $('document').ready(()=>{
                 console.log(thrownError)
             }
         }).done((res) => {
-<<<<<<< HEAD
             console.log("RESPONSE OBJECT - ", res) //debugging
-=======
-            console.log("RESPONSE OBJECT - ",res) //debugging
->>>>>>> b4bb679dfaf5afb6c347870c035c0bdbd0ca6ae1
             $('div#container').html(`
                 <div id='result'>
                     <h3>Result</h3>
@@ -82,7 +59,6 @@ $('document').ready(()=>{
                 </div>
                 <img src='images/award.png' alt='award'>              
             `)
-<<<<<<< HEAD
             $('button#submit').prop('disabled', 'true')
         })
     }
@@ -108,10 +84,6 @@ $('document').ready(()=>{
     $('button#submit').click(function () {
         console.log("SENT OBJECT - ",obj) //debugging
         makePost()
-=======
-            $('button#submit').prop('disabled','true')
-        })
->>>>>>> b4bb679dfaf5afb6c347870c035c0bdbd0ca6ae1
     })
 })
 
