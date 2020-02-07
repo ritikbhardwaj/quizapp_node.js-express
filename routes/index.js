@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const {Ques} = require('../database')
+const {Ques,User,Result} = require('../database')
 const {sequelize} = require('../database')
 /* GET home page. */
 router.get('/', function(req, res) {
@@ -55,10 +55,10 @@ router.post('/quiz',function(req,res){
     }
     //insert into database
     await sequelize.query(
-      'INSERT INTO results(rollnumber,marks,pof) VALUES(:rollnumber,:marks,:pof)',
+      'INSERT INTO results(roll_number,marks,pof) VALUES(:roll_number,:marks,:pof)',
       {
         replacements: {
-          rollnumber: obj.roll_number,
+          roll_number: obj.roll_number,
           marks: obj.marks,
           pof: obj.pof
         },

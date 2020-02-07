@@ -1,18 +1,22 @@
 /*
-This table contains the results of all the people who submitted the quiz
+This table contains all the users that have ever logged in
 */
 module.exports = (sequelize, DataTypes) => {
-    return sequelize.define('result', {
-        rollnumber: {
+    return sequelize.define('user', {
+        roll_number: {
             type: DataTypes.INTEGER,
             primaryKey: true,
+        },
+        name: {
+            type: DataTypes.STRING(20),
+            allowNull: false
         },
         marks: {
             type: DataTypes.INTEGER,
             allowNull: false
         },
-        pof: {
-            type: DataTypes.INTEGER,
+        created_at:{
+            type: DataTypes.DATE,
             allowNull: false
         }
     },{
