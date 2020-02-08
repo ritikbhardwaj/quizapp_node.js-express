@@ -2,10 +2,7 @@
 This table contains the options for the questions
 */
 module.exports = (sequelize, DataTypes) => {
-    return sequelize.define('option', {
-        qid: {
-            type: DataTypes.INTEGER,
-        },
+    const Option = sequelize.define('option', {
         option: {
             type: DataTypes.STRING(50),
             allowNull: false
@@ -13,4 +10,10 @@ module.exports = (sequelize, DataTypes) => {
     }, {
         timestamps: false
     });
+    Option.associate = function (models) {
+        Option.belongsTo(models.user, {
+            foreignKey: 'qid'
+        })
+    }
+    return Option;
 }

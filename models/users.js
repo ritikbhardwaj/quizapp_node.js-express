@@ -2,7 +2,7 @@
 This table contains all the users that have ever logged in
 */
 module.exports = (sequelize, DataTypes) => {
-    return sequelize.define('user', {
+    const User = sequelize.define('user', {
         roll_number: {
             type: DataTypes.INTEGER,
             primaryKey: true,
@@ -22,4 +22,10 @@ module.exports = (sequelize, DataTypes) => {
     },{
         timestamps: false
     });
+    User.associate = function(models){
+        User.hasOne(models.result,{
+            foreignKey: 'rollnumber'
+        })
+    }
+    return User;
 }

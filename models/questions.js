@@ -2,7 +2,7 @@
 This table contains the questions for the quiz
 */
 module.exports = (sequelize,DataTypes)=>{
-    return sequelize.define('question', {
+    const Question =  sequelize.define('question', {
         qid: {
             type: DataTypes.INTEGER,
             primaryKey: true,

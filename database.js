@@ -14,18 +14,6 @@ const sequelize = new Sequelize({
     database: config.database
 })
 
-//model associations
-userModel.hasOne(resultModel,{
-    foreignKey: {
-        name: 'roll_number'
-    }
-});
-quesModel.hasMany(optionModel,{
-    foreignKey:{
-        name: 'qid'
-    }
-});
-
 
 // Connect all the models/tables in the database to a db object,
 //so everything is accessible via one object

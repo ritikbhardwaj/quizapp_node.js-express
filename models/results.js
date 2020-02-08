@@ -2,10 +2,7 @@
 This table contains the results of all the people who submitted the quiz
 */
 module.exports = (sequelize, DataTypes) => {
-    return sequelize.define('result', {
-        rollnumber: {
-            type: DataTypes.INTEGER,
-        },
+    const Result = sequelize.define('result', {
         marks: {
             type: DataTypes.INTEGER,
             allowNull: false
@@ -17,4 +14,5 @@ module.exports = (sequelize, DataTypes) => {
     },{
         timestamps: false
     });
+    return Result;
 }
