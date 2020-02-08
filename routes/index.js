@@ -1,7 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const {Ques,User,Result} = require('../database')
-const {sequelize} = require('../database')
+
 /* GET home page. */
 router.get('/', function(req, res) {
   res.render('login')
@@ -12,13 +11,6 @@ router.get('/quiz',function(req,res){
     username : req.query.username,
     roll_number: req.query.roll_number
   }
-  //query the database
-  Ques.findAll({
-    attributes: ['qid', 'qtext', 'options']
-  }).then((questions) => { 
-    obj.questions = questions
-    res.render('quiz', { username: obj.username, roll_number: obj.roll_number, questions})
-  }) 
 })
 /* POST  */
 router.post('/quiz',function(req,res){

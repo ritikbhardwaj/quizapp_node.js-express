@@ -1,31 +1,14 @@
-const config = require('./config/config.json')
-const Sequelize = require('sequelize')
-//models
-const quesModel = require('./models/questions')
-const optionModel = require('./models/options')
-const resultModel = require('./models/results')
-const userModel = require('./models/users')
+const config = require('./config/config.json'),
+// get the client
+const mysql = require('mysql2');
 
-const sequelize = new Sequelize({
-    username: config.username,
-    password: config.password,
+// create the connection to database
+const connection = mysql.createConnection({
     host: config.host,
-    dialect: config.dialect,
-    database: config.database
-})
+    user: 'root',
+    database: 'web',
+    password: config.password
+});
 
-
-// Connect all the models/tables in the database to a db object,
-//so everything is accessible via one object
-const db ={} 
-
-db.sequelize = sequelize
-db.Sequelize = Sequelize
-
-//Models/tables
-db.Ques = quesModel(sequelize,Sequelize)
-db.Result = resultModel(sequelize, Sequelize)
-db.Option = optionModel(sequelize, Sequelize)
-db.User = userModel(sequelize,Sequelize)
-//exposing the connection to other files
-module.exports = db
+//Expose the connection
+module.exports = connection;
