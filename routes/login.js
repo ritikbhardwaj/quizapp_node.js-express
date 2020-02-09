@@ -5,4 +5,5 @@ const   express = require('express'),
 router.get('/', function (req, res) {
     res.render('login')
 })
+
 module.exports = router

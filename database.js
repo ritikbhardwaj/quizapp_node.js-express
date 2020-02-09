@@ -1,12 +1,13 @@
 const   config = require('./config/config.json'),
-        mysql = require('mysql2');
-// create the connection to database
-const connection = mysql.createConnection({
+        sql_promise = require('./utils/sql_wrapper')
+
+let configObj = {
     host: config.host,
     user: 'root',
     database: 'web',
     password: config.password
-});
-
+}
+// create the connection to database
+const sql = new sql_promise(configObj)
 //Expose the connection
-module.exports = connection;
+module.exports = sql;
