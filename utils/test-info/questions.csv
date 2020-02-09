@@ -1,7 +1,8 @@
-﻿qid,qtext,op1,op2,op3,op4,answer
+qid,qtext,op1,op2,op3,op4,answer
 1,Which of the following requires a device driver? (GATE CS 2001),Register,Cache,Main memory,Disk,4
 2,"Consider a machine with 64 MB physical memory and a 32-bit virtual address space. 
 If the page size is 4KB, what is the approximate size of the page table? (GATE 2001)",16 MB,8 MB,2 MB,24 MB,3
 3,"Consider a set of n tasks with known runtimes r1, r2, … rn to be run on a uniprocessor machine.
 Which of the following processor scheduling algorithms will result in the maximum throughput? (GATE 2001)",Round-robin,Shortest job first,Highest response ratio,fcfs,2
 4,"In which one of the following page replacement policies, Belady’s anomaly may occur?",FIFO,Optimal,LRU,MRU,1
+5,What type of pointer does malloc() return?,Int,Void ,Char,Float,2
