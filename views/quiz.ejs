@@ -13,21 +13,23 @@
 <body>
     <button id="back">↵Back</button>
     <div id="container">
-            <h1>Hello <span id="name"><%= username %></span>! - <span id="rollnumber"><%= roll_number%></span> - [<span id="time"> 0:00</span>]</h1>
+            <h1>Hello <span id="name"><%= username %></span> - <span id="rollnumber"><%= rollNumber%></span> -  <span id="time"> 0:00</span> </h1>
             <div id="line"></div>
             <ul>
-                <% for(let i =0; i < questions.length; i++){ %>
-                <li class="question" id="<%= questions[i].dataValues.qid%>">
-                    <p id="qtext"><span id="num">(<%= questions[i].dataValues.qid %>)</span> <%= questions[i].dataValues.qtext%></p>
-                    <% const arr = questions[i].dataValues.options.split(',') %>
+                <% file.forEach((question)=>{%>
+                <% if(question.answer == 'answer'){ %>
+                    <%return %>   
+                <%}%> 
+                <li class="question" id="<%= question.qid%>">
+                    <p id="qtext"><span id="num"><%= question.qid %>.</span> <%= question.qtext%></p>
                     <div class="options">
-                        <div class="option" id="1"><%= arr[0] %></div>
-                        <div class="option" id="2"><%= arr[1] %></div>
-                        <div class="option" id="3"><%= arr[2] %></div>
-                        <div class="option" id="4"><%= arr[3] %></div>
+                        <div class="option" id="1"><%= question.op1 %></div>
+                        <div class="option" id="2"><%= question.op2 %></div>
+                        <div class="option" id="3"><%= question.op2 %></div>
+                        <div class="option" id="4"><%= question.op3 %></div>
                     </div>
                 </li>
-                <% } %>
+                <% }) %>
             </ul>
         </div>
         <button id="submit">Submit ➔</button>

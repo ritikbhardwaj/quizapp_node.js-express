@@ -1,5 +1,4 @@
 $('document').ready(()=>{
-
     function tick() {
         // grab the h1
         var timeDisplay = document.getElementById("time");
@@ -20,6 +19,7 @@ $('document').ready(()=>{
         if (secondsRemaining === 0) {
             alert("Time up!");
             makePost()
+            clearInterval(intervalHandle)
         }
         //subtract from seconds remaining
         secondsRemaining--;
@@ -31,7 +31,7 @@ $('document').ready(()=>{
         //every second, call the "tick" function
         // have to make it into a variable so that you can stop the interval later!!!
         intervalHandle = setInterval(tick, 1000)
-    })(0.2)
+    })(10)
 
     function makePost() {
         $.ajax({
@@ -52,10 +52,9 @@ $('document').ready(()=>{
             console.log("RESPONSE OBJECT - ", res) //debugging
             $('div#container').html(`
                 <div id='result'>
-                    <h3>Result</h3>
-                    <p id='name'>${res.name}</p>
-                    <p id='rollnumber'>${res.roll_number}</p>
-                    <h1><span id='marks'>${res.marks}</span>/${res.arr2.length} - <span id='pof' style='color: ${res.pof ? 'green' : 'red'}'>${res.pof ? 'PASS!' : 'FAIL!'}</spanspan></h1>
+                    <h3>${res}</h3>
+                    <p id='name'>${obj.name}</p>
+                    <p id='rollnumber'>${obj.roll_number}</p>
                 </div>
                 <img src='images/award.png' alt='award'>              
             `)
@@ -84,6 +83,7 @@ $('document').ready(()=>{
     $('button#submit').click(function () {
         console.log("SENT OBJECT - ",obj) //debugging
         makePost()
+        clearInterval(intervalHandle)
     })
 })
 

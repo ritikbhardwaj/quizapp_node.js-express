@@ -6,9 +6,9 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "csv-parser": "^2.3.2",
     "ejs": "^3.0.1",
     "express": "~4.16.1",
-    "knex": "^0.20.9",
     "mysql2": "^2.1.0"
   }
 }

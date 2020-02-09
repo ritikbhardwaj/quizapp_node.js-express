@@ -47,7 +47,10 @@ div#container h1 {
 }
 
 div#container span#name {
-    color: #f9ba28;
+    color: #302a24;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 300;
 }
 
 div#container div#line {
@@ -86,7 +89,7 @@ ul li p#qtext {
     width: 50%;
     font-family: 'Montserrat', sans-serif;
     font-weight: 100;
-    font-size: 25px;
+    font-size: 17px;
 }
 
 ul li div.options {
@@ -117,13 +120,14 @@ ul li div.options div {
     justify-content: center;
     font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
-    font-weight: bold;
+    /* font-weight: bold; */
+    font-size: 15px;
 }
 
 span#num {
     font-weight: bold;
     font-family: 'Montserrat', sans-serif;
-    font-size: 30px;
+    font-size: 17px;
 }
 
 .bgselect {
@@ -168,10 +172,6 @@ div#result>p#rollnumber {
     margin-top: 0px;
 }
 
-div#result>h1 {
-    font-size: 30px;
-}
-
 div#result span#pof {
     color: green;
 }
@@ -182,8 +182,8 @@ div#result>h1 span#marks {
 }
 
 div#result>h3 {
-    font-family: 'Prata', serif;
-    font-size: 50px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
     /* text-decoration: underline; */
 }
 
@@ -198,7 +198,8 @@ div#container img {
 
 /* timer */
 
-#time{
-    color: red;
-    
+#time {
+    color: rgb(255, 95, 46);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
 }

@@ -1,7 +1,5 @@
-const config = require('./config/config.json'),
-// get the client
-const mysql = require('mysql2');
-
+const   config = require('./config/config.json'),
+        mysql = require('mysql2');
 // create the connection to database
 const connection = mysql.createConnection({
     host: config.host,

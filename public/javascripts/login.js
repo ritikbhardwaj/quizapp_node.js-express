@@ -5,7 +5,7 @@ $('document').ready(()=>{
         if(username == '' || roll_number == ''){
             alert('Fields cannot be empty!')
         }else{
-            window.location.replace(`http://localhost:3000/quiz?username=${username}&roll_number=${roll_number}`)
+            window.location.replace(`http://localhost:3000/quiz?username=${username}&rollnumber=${roll_number}`)
         } 
     })
     //results button
