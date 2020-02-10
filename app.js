@@ -1,8 +1,9 @@
 const   express = require('express')
 const   path = require('path')
 const   app = express()
-const   indexRouter = require('./routes/quiz')
-        loginRouter = require('./routes/login')
+const   indexRouter = require('./routes/quiz'),
+        loginRouter = require('./routes/login'),
+        resultRouter = require('./routes/result')
 
 
 // view engine setup
@@ -17,5 +18,6 @@ app.use(express.static(path.join(__dirname, 'public')))
 //route
 app.use('/', indexRouter)
 app.use('/', loginRouter)
+app.use('/', resultRouter)
 
 module.exports = app

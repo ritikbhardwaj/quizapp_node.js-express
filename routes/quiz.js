@@ -19,7 +19,6 @@ router.get('/quiz', function (req, res, next) {  //middleware
 
 /* POST  */
 router.post('/quiz',function(req,res){
-    console.log(req.body)
   	var marks = 0 //marks for the answers
   	var reqarr = Object.values(req.body.answers)
   	var actualarr = []
@@ -41,7 +40,5 @@ router.post('/quiz',function(req,res){
   sql.query('INSERT INTO results(rollNumber,marks) VALUES(?,?)',[req.body.roll_number,marks])
   .then(()=>res.send('Submitted successfully!'))
   .catch((err)=>res.send(err.sqlMessage))
-  sql.close() //close the connection
-
 })
 module.exports = router

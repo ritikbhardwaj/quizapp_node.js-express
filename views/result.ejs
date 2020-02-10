@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="stylesheets/result.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,800,900&display=swap" rel="stylesheet">
+    <title>Quiz</title>
+</head>
+<body>
+    <button id="back">Back</button>
+    <div id="container">
+        <ul>
+            <% let index = 1 %> 
+            <% rows.forEach((row)=>{%> 
+            <li>
+                <div id="rank"><%= index++ %> </div>
+                <h1 id="name"><%= row.name %> </h1>-<h1 id="roll_number"> <%= row.rollNumber %> </h1>
+                <h3 id="marks"> <span id="num"><%= row.marks %> </span>/4</h3> 
+            </li>
+        <% }) %> 
+        </ul>
+    </div>
+    <button id="submit" disabled>Submit</button>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script   src="javascripts/result.js"></script>
+</body>
+</html>

@@ -1,12 +1,13 @@
 const   csv = require('csv-parser'),
-        fs = require('fs')
+        fs = require('fs'),
+    path = 'utils/test-info/questions.csv'
 
-var results = []
+    var results = []
+    fs.createReadStream(path)
+        .pipe(csv(['qid', 'qtext', 'op1', 'op2', 'op3', 'op4', 'answer']))
+        .on('data', (data) => results.push(data))
+        .on('end', () => {
+            console.log(`Csv file (${path}) read complete!`)
+        });
 
-fs.createReadStream('utils/test-info/questions.csv')
-    .pipe(csv(['qid','qtext','op1','op2','op3','op4','answer']))
-    .on('data', (data) => results.push(data))
-    .on('end', () => {
-        console.log('Csv file read complete!')
-    });
 module.exports = results;
