@@ -5,7 +5,7 @@
 
 body {
     display: flex;
-    background-color: #3fc1c9;
+    background-color: #9ee3f2;
     height: 100vh;
     width: 100vw;
     align-items: center;
@@ -14,6 +14,14 @@ body {
 
 /* form styling */
 
+div#form:hover {
+    transition: all 0.5s;
+    /* shadow */
+    -webkit-box-shadow: -1px 0px 18px -4px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: -1px 0px 18px -4px rgba(0, 0, 0, 0.5);
+    box-shadow: -1px 0px 18px -4px rgba(0, 0, 0, 0.5);
+}
+
 div#form {
     display: flex;
     flex-direction: column;
@@ -21,14 +29,10 @@ div#form {
     height: 215px;
     align-items: center;
     justify-content: center;
-    background-color: #f5f5f5;
+    background-color: #fefefe;
     padding: 10px 30px 30px 30px;
-    border-radius:5px;
-    border: 3px white solid;
-    /* shadow */
-    -webkit-box-shadow: -1px 0px 18px -4px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: -1px 0px 18px -4px rgba(0, 0, 0, 0.75);
-    box-shadow: -1px 0px 18px -4px rgba(0, 0, 0, 0.75);
+    border-radius: 5px;
+    /* border: 3px white solid; */
 }
 
 div#form h1 {
@@ -44,15 +48,16 @@ button {
     width: 415px;
     height: 40px;
     margin-top: 10px;
-    border-radius: 7px;
+    border-radius: 1px;
     font-size: 17px;
     font-weight: 500;
     color: white;
     outline: none;
     cursor: pointer;
+    border: none;
 }
 
-button#result{
+button#result {
     background-color: rgb(100, 250, 100);
 }
 
@@ -60,10 +65,11 @@ div#form input {
     width: 400px;
     height: 30px;
     margin: 10px;
-    padding: 5px;
+    padding: 7px;
     font-size: 15px;
     outline-width: 2px;
     outline-color: #3fc1c9;
-    border-radius: 5px;
+    border-radius: 2px;
     border: none;
+    background-color: #ededed;
 }

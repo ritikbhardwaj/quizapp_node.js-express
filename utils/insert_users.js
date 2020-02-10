@@ -1,30 +1,28 @@
-const 	csv = require('csv-parser'),
-		fs = require('fs'),
-		sql = require('../database'),
-		path = 'test-info/users.csv'
+const csvFilePath = 'utils/test-info/users.csv'
+const csv = require('csvtojson')
+const sql = require('../database')
 
-let results = []
-fs.createReadStream(path)
-	.pipe(csv(['rollNumber', 'name']))
-	.on('data', (data) => results.push(data))
-	.on('end', () => {
-		console.log(`CSV file (${path}) loaded!`)
+let string = 'INSERT INTO users(rollNumber,name,createdAt) VALUES'
+csv()
+	.fromFile(csvFilePath)
+	.then((rows) => {
+		//empty the table
+		sql.query('DELETE FROM users WHERE 1=1')
+			.then(() => {
+				return sql.query(returnQuery(rows))
+			}).then((result)=>{
+				console.log(result)
+			})
 	})
-
-
 function returnQuery(rows){
-	let string = 'INSERT INTO users(rollNumber,name,createdAt) VALUES'
-	rows.forEach(row => {
-		string += `(${row.rollNumber},"${row.name}",CURDATE()),`
-	});
-	string += ';'
+	for(let i =0; i<rows.length; i++){
+		string += `(${rows[i].rollNumber},"${rows[i].name}",CURDATE())`
+		if(i == rows.length-1){
+			string += ';'
+		}else{
+			string += ','
+		}
+	}
 	return string
 }
 
-
-// console.log(returnQuery(rows))
-//empty the table
-// sql.query('DELETE FROM users WHERE 1=1')
-// .then(()=>{
-	
-// })

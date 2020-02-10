@@ -8,7 +8,7 @@ body {
     width: 100vw;
     display: flex;
     justify-content: center;
-    background-color: #3fc1c9
+    background-color: #9ee3f2
 }
 
 body button {
@@ -48,8 +48,10 @@ ul {
 }
 
 ul li {
+    cursor: pointer;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     background-color: #fff;
     font-family: Montserrat, sans-serif;
     width: 93%;
@@ -64,7 +66,7 @@ ul li {
 }
 
 ul li div#rank {
-    background-color: gold;
+    background-color: rgb(255, 196, 0);
     font-family: 'arial black';
     color: #fff;
     width: 50px;
@@ -75,14 +77,18 @@ ul li div#rank {
     align-items: center;
     font-size: 35px
 }
-
-ul li h1 {
-    margin-right: 70px;
-    margin-left: 30px
+ul li:hover{
+    border: 2px solid yellow;
+    height: 55px;
+    transition: all 0.3s;
 }
 
-ul li h3 {
-    font-size: 12px
+
+
+ul li #container-right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 ul li #marks {

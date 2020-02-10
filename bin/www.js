@@ -3,5 +3,5 @@ const app = require('../app'),
       PORT = require("../config/config").port;
       
 app.listen(PORT, () => {
-  console.log('Express listening on port:', PORT);
+  console.log('[+]Express listening on port:', PORT);
 });

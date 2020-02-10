@@ -17,8 +17,12 @@
             <% rows.forEach((row)=>{%> 
             <li>
                 <div id="rank"><%= index++ %> </div>
-                <h1 id="name"><%= row.name %> </h1>-<h1 id="roll_number"> <%= row.rollNumber %> </h1>
-                <h3 id="marks"> <span id="num"><%= row.marks %> </span>/4</h3> 
+                <h1 id="name"><%= row.name %> </h1>
+                <div id="container-right">
+                    <h1 id="roll_number"><%= row.rollNumber %> </h1>
+                    <h3 id="marks"> <span id="num"><%= row.marks %> </span>/<%= total %> </h3>
+                </div>
+                
             </li>
         <% }) %> 
         </ul>

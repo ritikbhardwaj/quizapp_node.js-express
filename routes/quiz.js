@@ -5,7 +5,7 @@ const	express = require('express'),
 
 /* GET */
 router.get('/quiz', function (req, res, next) {  //middleware 
-  sql.query('SELECT name from users WHERE rollNumber = ?', [parseInt(req.query.rollnumber)])
+  sql.query('SELECT name from users WHERE rollNumber = ? AND name=?', [parseInt(req.query.rollnumber),req.query.username])
     .then((rows) => {
       if(rows.length === 0){
         res.render('user_not_exist')
